@@ -9,7 +9,7 @@ const Weather = () => {
         city: '',
         country: ''
     })
-    const [weather, setWeather] = useState([]);
+    const [weather, setWeather] = useState();
 
     async function dataWeather(e) {
         e.preventDefault();
@@ -19,18 +19,15 @@ const Weather = () => {
         if (inputVal.country === "") {
             alert("Add Country Name");
         }
-        
+
         else {
-            const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputVal.city}&${inputVal.country}&appid=${apiKey}`)
-                .then(res => res.json())
-                .then(data => data)
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputVal.city}&${inputVal.country}&appid=${apiKey}`)
+            const data = await res.json();
 
-                setWeather({
-                    data: data,
-                })
-            
+            setWeather(
+                data
+            )
 
-            
         }
 
     }
@@ -47,7 +44,7 @@ const Weather = () => {
             setInputVal({ ...inputVal, country: value })
         }
     }
-   
+
 
 
 
@@ -80,9 +77,9 @@ const Weather = () => {
             </form>
 
             {
-                weather.data !== undefined ?
+                weather !== undefined ?
                     <div>
-                        <DisplayData data={weather.data} />
+                        <DisplayData data={weather} />
                     </div>
                     : null
             }

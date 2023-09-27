@@ -1,46 +1,40 @@
-div.widget
-{
-  position: relative;
+div.widget {
+  display: flex;
+  justify-content: center;
   width: 355px;
-  height: 125px;
   margin: 150px auto;
   background-color: #3ccaca;
   border-radius: 9px;
-  padding: 25px;
+  padding: 30px;
   padding-right: 30px;
   box-shadow: 0px 31px 35px -26px #080c21;
 }
 
-div.date
-{
+div.date {
   font-size: 14px;
   font-weight: bold;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
-div.city
-{
+div.city {
   font-size: 21px;
   font-weight: bold;
   text-transform: uppercase;
   padding-top: 5px;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 
-div.temp
-{
+div.temp {
   font-size: 81px;
-  color: rgba(0,0,0,0.9);
+  color: rgba(0, 0, 0, 0.9);
   font-weight: 100;
 }
 
-div.panel
-{
+div.panel {
   display: inline-block;
 }
 
-div.right-panel
-{
+div.right-panel {
   position: absolute;
   float: right;
   top: 0;
